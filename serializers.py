@@ -7,3 +7,23 @@ class CardSerializer(serializers.ModelSerializer):
     cmc = serializers.IntegerField()
     # colors
     type = serializers.CharField(max_length=200)      # e.g. "Legendary Creature — Human Monk"
+
+
+class SetSerializer:
+    pass
+
+
+class TypeSerializer:
+    pass
+
+
+class SubtypeSerializer:
+    pass
+
+
+class SupertypeSerializer:
+    pass
+
+
+class FormatSerializer:
+    pass
