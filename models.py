@@ -1,6 +1,13 @@
-from mtgsdk import card
+"""MTG API resources exposed by the mtgsdk package."""
 
-from django.db import models
+from mtgsdk import Card, Set, Subtype, Supertype, Type
+from mtgsdk.config import __endpoint__
+from mtgsdk.restclient import RestClient
 
-class Card(card.Card, models.Model):
-  pass
+
+class Format:
+    """Adapter for the formats endpoint, which is not exposed by mtgsdk."""
+
+    @staticmethod
+    def all() -> list[str]:
+        return RestClient.get(f"{__endpoint__}/formats")["formats"]
